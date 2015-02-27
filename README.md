@@ -11,6 +11,9 @@ bc = Background.new do
 end
 
 bc.finished do
-	Email.send(bc.error? ? "Was not possible to complete the process!<br />Error: #{bc.error}" : 'Successfully Completed')
+	msg = bc.error? ?
+		"Was not possible to complete the process!<br />Error: #{bc.error}" :
+		'Successfully Completed'
+	Email.send(msg)
 end
 ```
