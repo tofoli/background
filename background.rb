@@ -2,8 +2,8 @@
 
 @@queue = []
 class Background
-  def initialize
-	  th = Thread.new do
+	def initialize
+		th = Thread.new do
 			while @@queue.index(th) != 0
 				sleep 10
 			end
